@@ -15,24 +15,48 @@ navigationLinks.forEach(link => {
         navLinks.classList.remove("active");
     });
 });
-
-
-// =========================================
-// CONTACT FORM
-// =========================================
-
 const contactForm = document.getElementById("contact-form");
+const submitBtn = document.getElementById("submit-btn");
+const formStatus = document.getElementById("form-status");
 
-contactForm.addEventListener("submit", function(event) {
-
+contactForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const name = document.getElementById("name").value;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    formStatus.textContent = "";
 
-    alert(
-        "Thank you, " + name +
-        "! Your message has been received."
-    );
+    const formData = new FormData(contactForm);
 
-    contactForm.reset();
+    try {
+        const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (response.ok) {
+            formStatus.textContent =
+                "Message sent successfully! Thank you for contacting me. I will get back to you soon.";
+
+            formStatus.style.color = "green";
+
+            contactForm.reset();
+        } else {
+            formStatus.textContent =
+                "Sorry, there was a problem sending your message. Please try again.";
+
+            formStatus.style.color = "red";
+        }
+    } catch (error) {
+        formStatus.textContent =
+            "Unable to send the message. Please check your internet connection and try again.";
+
+        formStatus.style.color = "red";
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Message";
 });
