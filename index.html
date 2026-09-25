@@ -26,6 +26,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -304,7 +305,167 @@
 
 </section>
 
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section projects-section">
 
+    <div class="section-title">
+
+        <p>MY PRACTICAL PROJECT</p>
+
+        <h2>Projects</h2>
+
+    </div>
+
+    <div class="projects-container">
+
+        <div class="project-card">
+
+            <div class="project-icon">
+                📦
+            </div>
+           
+
+            <div class="project-content">
+
+                <span class="project-type">
+                    Web-Based Application
+                </span>
+
+                <h3>
+                    Wholesale Inventory Management System
+                </h3>
+
+                <p>
+                    A web-based inventory management system developed
+                    for a small wholesale shop dealing with household
+                    items. The system helps manage products, monitor
+                    stock movement and keep track of available inventory.
+                </p>
+                <div class="project-details">
+
+    <div class="project-detail-item">
+        <h4>Problem</h4>
+        <p>
+            Small wholesale businesses can face difficulties keeping
+            accurate records of available stock, incoming goods and
+            outgoing goods when inventory is managed manually.
+        </p>
+    </div>
+
+    <div class="project-detail-item">
+        <h4>Solution</h4>
+        <p>
+            I developed a web-based inventory management system that
+            allows products and categories to be managed while
+            automatically updating stock quantities whenever goods
+            are received or issued.
+        </p>
+    </div>
+
+    <div class="project-detail-item">
+        <h4>My Role</h4>
+        <p>
+            I designed and developed the system, created the database,
+            implemented the inventory functions, added validation and
+            developed reporting features.
+        </p>
+    </div>
+
+</div>
+          <div class="project-screenshots">
+
+    <img src="images/inventory-dashboard.png"
+         alt="Inventory Management System Dashboard"
+         class="project-image"
+         onclick="openProjectImage(this)">
+
+    <img src="images/inventory-products.png"
+         alt="Inventory Management System Products"
+         class="project-image"
+         onclick="openProjectImage(this)">
+
+    <img src="images/inventory-reports.png"
+         alt="Inventory Management System Reports"
+         class="project-image"
+         onclick="openProjectImage(this)">
+
+</div>
+
+                <h4>Key Features</h4>
+
+                <ul class="project-features">
+
+                    <li>
+                        Product and category management
+                    </li>
+
+                    <li>
+                        Recording of incoming and outgoing stock
+                    </li>
+
+                    <li>
+                        Automatic stock quantity updates
+                    </li>
+
+                    <li>
+                        Low-stock alerts
+                    </li>
+
+                    <li>
+                        Inventory reports with date filtering
+                    </li>
+
+                    <li>
+                        Printable reports
+                    </li>
+
+                    <li>
+                        CSV export for Excel
+                    </li>
+
+                    <li>
+                        Input validation and secure database operations
+                    </li>
+
+                </ul>
+
+                <div class="project-technologies">
+
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>XAMPP</span>
+
+                </div>
+
+               <div class="project-note">
+
+    <strong>Project Highlights:</strong>
+
+    <ul>
+        <li>Designed and developed the system from database structure to user interface.</li>
+        <li>Implemented automatic stock tracking for incoming and outgoing goods.</li>
+        <li>Added validation to improve data accuracy and prevent invalid entries.</li>
+        <li>Implemented inventory reports with date filtering, printing and CSV export.</li>
+        <li>Designed the system for a small wholesale business dealing with household items.</li>
+    </ul>
+
+    <p class="private-project">
+        <strong>Project Status:</strong>
+        Private portfolio project. Source code is not publicly available.
+    </p>
+
+</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- ================= EXPERIENCE ================= -->
 <section id="experience" class="section">
@@ -678,6 +839,21 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <!-- ================= PROJECT IMAGE LIGHTBOX ================= -->
+
+<div id="project-lightbox" class="project-lightbox">
+
+    <button class="lightbox-close"
+            type="button"
+            onclick="closeProjectImage()">
+        &times;
+    </button>
+
+    <img id="lightbox-image"
+         src=""
+         alt="Project Screenshot">
+
+</div>
 
 </body>
 

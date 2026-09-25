@@ -67,3 +67,44 @@ contactForm.addEventListener("submit", async function (event) {
     submitBtn.disabled = false;
     submitBtn.textContent = "Send Message";
 });
+// ================= PROJECT IMAGE LIGHTBOX =================
+
+function openProjectImage(image) {
+
+    const lightbox = document.getElementById("project-lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+
+    lightbox.style.display = "flex";
+}
+
+function closeProjectImage() {
+
+    const lightbox = document.getElementById("project-lightbox");
+
+    lightbox.style.display = "none";
+}
+
+
+// Close when clicking outside the image
+document.addEventListener("click", function(event) {
+
+    const lightbox = document.getElementById("project-lightbox");
+
+    if (event.target === lightbox) {
+        closeProjectImage();
+    }
+
+});
+
+
+// Close with ESC key
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeProjectImage();
+    }
+
+});
